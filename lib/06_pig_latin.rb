@@ -1,30 +1,27 @@
-def translate(s)
-  words = s.split(" ")
+def translate(str)
+  words = str.split(' ')
   words.map! do |w|
     single_word(w)
   end
-  words.join(" ")
-  
+  words.join(' ')
 end
 
-def single_word(s)
+def single_word(str)
   vowels = %w[a e i o u y]
-  capitalized= s[0] == s[0].upcase
-  s[0]=s[0].downcase
+  capitalized = str[0] == str[0].upcase
+  str[0] = str[0].downcase
   i = 0
-  while i < s.length
-    if s[i,3]=="sch"
-      i+=3
-    elsif s[i,2]=="qu"
-      i+=2
-    elsif !vowels.include?(s[i])
-      i+=1
-    else 
+  while i < str.length
+    if str[i, 3] == 'sch'
+      i += 3
+    elsif str[i, 2] == 'qu'
+      i += 2
+    elsif !vowels.include?(str[i])
+      i += 1
+    else
       break
-    end   
+    end
   end
-  if capitalized
-    s[i]=s[i].upcase 
-  end
-  s[i,s.length]+s[0,i]+"ay"
+  str[i] = str[i].upcase if capitalized
+  str[i, str.length] + str[0, i] + 'ay'
 end

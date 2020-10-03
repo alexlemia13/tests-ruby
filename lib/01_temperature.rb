@@ -1,5 +1,4 @@
 def ftoc(num)
-
   val = -1
   case num
 
@@ -13,7 +12,7 @@ def ftoc(num)
     val = 20
   end
 
-  return val
+  val
 end
 
 def ctof(num)
@@ -30,7 +29,5 @@ def ctof(num)
     val = 98.6
   end
 
-  return val
+  val
 end
-
-
